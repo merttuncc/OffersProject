@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OffersProject", "OffersProject\OffersProject.csproj", "{FE184379-ACF1-46DB-9997-EB3B69A71A7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OffersProject", "OffersProject\OffersProject.csproj", "{FE184379-ACF1-46DB-9997-EB3B69A71A7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials.Currency.Test", "Tests\Tutorials.Currency.Test\Tutorials.Currency.Test.csproj", "{4EB12150-A330-40F8-A5DF-B4AE6E924F10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials.Currency", "Tutorials.Currency\Tutorials.Currency.csproj", "{8F01FECF-A29D-4703-85C1-CD8E308E38D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FE184379-ACF1-46DB-9997-EB3B69A71A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE184379-ACF1-46DB-9997-EB3B69A71A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE184379-ACF1-46DB-9997-EB3B69A71A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB12150-A330-40F8-A5DF-B4AE6E924F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB12150-A330-40F8-A5DF-B4AE6E924F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB12150-A330-40F8-A5DF-B4AE6E924F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB12150-A330-40F8-A5DF-B4AE6E924F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F01FECF-A29D-4703-85C1-CD8E308E38D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F01FECF-A29D-4703-85C1-CD8E308E38D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F01FECF-A29D-4703-85C1-CD8E308E38D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F01FECF-A29D-4703-85C1-CD8E308E38D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

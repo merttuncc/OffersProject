@@ -1,4 +1,4 @@
-﻿using OfferModels.Models.Enums;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,16 +8,20 @@ using System.Threading.Tasks;
 
 namespace OfferModels.Models
 {
-    public class Users
+    public class CompanyContact
     {
-        [Key]
         public int Id { get; set; }
+        public int CompanyId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string ReqistryNumber { get; set; }
+        public string Task { get; set; }
         public string PhoneNumber { get; set; }
         public string Mail { get; set; }
-        public string Password { get; set; }
-        public Roles roles { get; set; }
+
+        //Navigation Property
+        public virtual Company Company { get; set; }
+
+        //public List<Offer> Offers { get; set; }
+        //public ICollection<OfferContact> OfferContacts { get; set; }
     }
 }
