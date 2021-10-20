@@ -1,4 +1,5 @@
 ﻿using OfferModels.Models.Enums;
+using OffersProject.Models.CurrencyModel;
 using OffersProject.Models.OfferDetailsModel;
 using System;
 using System.Collections.Generic;
@@ -25,5 +26,7 @@ namespace OfferModels.Models
 
 
         public List<OfferDetailInfo> OfferDetailsInfo { get; set; }
+        
+
     }
 }

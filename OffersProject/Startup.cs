@@ -24,7 +24,7 @@ namespace OffersProject
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = configuration ;
         }
 
         public IConfiguration Configuration { get; }
@@ -40,7 +40,7 @@ namespace OffersProject
             services.AddScoped<OfferService>();
             services.AddScoped<OfferDetailsService>();
             //services.AddScoped<CurrencyServiceTest>();
-
+            services.AddCors();
             services.AddControllers(options =>
             {
                 options.ReturnHttpNotAcceptable = true;
@@ -67,10 +67,15 @@ namespace OffersProject
             //app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 
-            app.UseAuthentication();
+            
+
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

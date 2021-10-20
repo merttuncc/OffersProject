@@ -86,6 +86,7 @@ namespace OffersProject.Services
                     ProfitRate = offerInfo.ProfitRate,
                     Date = offerInfo.Date,
                     ValidityDate = offerInfo.ValidityDate,
+                    Currency=offerInfo.Currency,
                     OfferDetail = offerDetails.ToList()
 
 

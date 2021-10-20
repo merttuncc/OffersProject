@@ -1,4 +1,5 @@
 ﻿using OfferModels.Models.Enums;
+using OffersProject.Models.CurrencyModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,7 @@ namespace OffersProject.Models.OfferDetailsModel
         public decimal UnitCost { get; set; }
 
         public Currency Currency { get; set; }
+
+        
     }
 }
