@@ -62,6 +62,7 @@ namespace OffersProject
 <<<<<<< HEAD
             services.AddScoped<IAuthRepository,AuthRepository>();
             //services.AddScoped<CurrencyServiceTest>();
+<<<<<<< HEAD
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 
@@ -75,6 +76,9 @@ namespace OffersProject
             });
 =======
             //services.AddScoped<CurrencyServiceTest>();
+            services.AddCors();
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
+=======
             services.AddCors();
 >>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             services.AddControllers(options =>
@@ -113,6 +117,13 @@ namespace OffersProject
             app.UseCors(builder=>builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
 >>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 
+<<<<<<< HEAD
+=======
+            
+
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
+
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             app.UseHttpsRedirection();
 
             app.UseRouting();

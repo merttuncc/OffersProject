@@ -1,5 +1,9 @@
 ﻿using OfferModels.Models.Enums;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+using OffersProject.Models.CurrencyModel;
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 =======
 using OffersProject.Models.CurrencyModel;
 >>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
@@ -30,6 +34,11 @@ namespace OfferModels.Models
 
         public List<OfferDetailInfo> OfferDetailsInfo { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 =======
         
 

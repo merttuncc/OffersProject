@@ -125,11 +125,14 @@ namespace OffersProject.Services
                     Date = offerInfo.Date,
                     ValidityDate = offerInfo.ValidityDate,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     OfferDetail = offerDetails.ToList()
                 };
 
                 _context.Offers.Add(vOffer);
 =======
+=======
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                     Currency=offerInfo.Currency,
                     OfferDetail = offerDetails.ToList()
 
