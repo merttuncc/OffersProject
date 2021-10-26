@@ -35,11 +35,8 @@ namespace OfferModels.Models
 
         public virtual List<OfferDetail> OfferDetail { get; set; } 
 
-<<<<<<< HEAD
         public virtual User User { get; set; }
 
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
         //public ICollection<OfferContact> OfferContacts { get; set; }
     }
 }

@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-=======
-﻿using Microsoft.AspNetCore.Mvc;
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 using OfferModels.Models;
 using OfferModuleProject.Context;
 using OffersProject.Models.CompanyModels;
@@ -20,7 +16,6 @@ namespace OffersProject.Controllers
     [ApiController]
     public class CompanyController : Controller
     {
-<<<<<<< HEAD
 
         private readonly CompanyService _companyService;
         //private readonly IMapper _mapper;
@@ -28,24 +23,14 @@ namespace OffersProject.Controllers
         {
             _companyService = companyService;
             //_mapper = mapper;
-=======
-        CompanyService _companyService;
-        public CompanyController(CompanyService companyService)
-        {
-            _companyService = companyService;
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
         }
         
         [HttpGet("GetCompanyList")]
         public IActionResult GetSummaryList()
         {
-<<<<<<< HEAD
             
             var vResult = _companyService.GetSummaryList();
             //var Result = _mapper.Map<List<CompanySummary>>(vResult);
-=======
-            var vResult = _companyService.GetSummaryList();
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             return Ok(vResult);
         }
         

@@ -98,7 +98,6 @@ namespace OffersProject.Services
             }
                     
         }
-<<<<<<< HEAD
 
         
         public async Task<Result> OfferDetailDelete(int detailId)
@@ -117,7 +116,5 @@ namespace OffersProject.Services
                 return Result.PrepareFailure(vEx.Message);
             }
         }
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
     }
 }

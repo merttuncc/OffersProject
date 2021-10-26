@@ -141,12 +141,9 @@ namespace OffersProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-<<<<<<< HEAD
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                     b.Property<DateTime>("ValidityDate")
                         .HasColumnType("Datetime");
 
@@ -154,11 +151,8 @@ namespace OffersProject.Migrations
 
                     b.HasIndex("CompanyId");
 
-<<<<<<< HEAD
                     b.HasIndex("UserId");
 
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                     b.ToTable("Offers");
                 });
 
@@ -169,13 +163,8 @@ namespace OffersProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-<<<<<<< HEAD
                     b.Property<int>("Currency")
                         .HasColumnType("int");
-=======
-                    b.Property<byte>("Currency")
-                        .HasColumnType("tinyint");
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 
                     b.Property<string>("Definition")
                         .HasColumnType("nvarchar(max)");
@@ -233,15 +222,12 @@ namespace OffersProject.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-<<<<<<< HEAD
                     b.Property<byte[]>("PasswordHash")
                         .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("varbinary(max)");
 
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -275,7 +261,6 @@ namespace OffersProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-<<<<<<< HEAD
                     b.HasOne("OfferModels.Models.User", "User")
                         .WithMany("Offers")
                         .HasForeignKey("UserId");
@@ -283,9 +268,6 @@ namespace OffersProject.Migrations
                     b.Navigation("Company");
 
                     b.Navigation("User");
-=======
-                    b.Navigation("Company");
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                 });
 
             modelBuilder.Entity("OfferModels.Models.OfferDetail", b =>
@@ -310,14 +292,11 @@ namespace OffersProject.Migrations
                 {
                     b.Navigation("OfferDetail");
                 });
-<<<<<<< HEAD
 
             modelBuilder.Entity("OfferModels.Models.User", b =>
                 {
                     b.Navigation("Offers");
                 });
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 #pragma warning restore 612, 618
         }
     }

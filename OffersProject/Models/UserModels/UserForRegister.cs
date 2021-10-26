@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace OffersProject.Models.UserModels
 {
-<<<<<<< HEAD:OffersProject/Models/UserModels/UserForRegister.cs
     public class UserForRegister
-=======
-    public class User
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a:OffersProject/Data/Entities/User.cs
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

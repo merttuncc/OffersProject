@@ -11,10 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OfferModuleProject.Context;
-<<<<<<< HEAD
 using OffersProject.Helpers;
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 using OffersProject.Services;
 using System;
 using System.Collections.Generic;
@@ -28,7 +25,7 @@ namespace OffersProject
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration ;
+            Configuration = configuration;
         }
         
         public IConfiguration Configuration { get; }
@@ -36,7 +33,6 @@ namespace OffersProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-<<<<<<< HEAD
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Appsettings:Token").Value);
 
             services.AddCors(options =>
@@ -50,19 +46,12 @@ namespace OffersProject
             });
             services.AddDbContext<Context>(x => x.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
             services.AddAutoMapper(typeof(Startup));
-=======
-            
-            services.AddDbContext<Context>(x => x.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
-
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             services.AddScoped<CompanyService>();
             services.AddScoped<CompanyContactService>();
             services.AddScoped<OfferService>();
             services.AddScoped<OfferDetailsService>();
-<<<<<<< HEAD
             services.AddScoped<IAuthRepository,AuthRepository>();
             //services.AddScoped<CurrencyServiceTest>();
-<<<<<<< HEAD
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 
@@ -74,13 +63,6 @@ namespace OffersProject
                     ValidateAudience=false
                 };
             });
-=======
-            //services.AddScoped<CurrencyServiceTest>();
-            services.AddCors();
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
-=======
-            services.AddCors();
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             services.AddControllers(options =>
             {
                 options.ReturnHttpNotAcceptable = true;
@@ -106,24 +88,10 @@ namespace OffersProject
 
             //app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
-<<<<<<< HEAD
             //app.UseCors(builder => builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
 
             app.UseCors("AllowSpecificOrigin");
-=======
 
-            
-
-            app.UseCors(builder=>builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
-
-<<<<<<< HEAD
-=======
-            
-
-            app.UseCors(builder=>builder.WithOrigins("http://localhost:8080").AllowAnyHeader());
-
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             app.UseHttpsRedirection();
 
             app.UseRouting();

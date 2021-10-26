@@ -37,7 +37,6 @@ namespace OffersProject.Controllers
             var vResult = await _offerDetailsService.UpdadeOfferDetails(offerDetailInfo);
             return Ok(vResult);
         }
-<<<<<<< HEAD
 
         [HttpDelete("DeleteOfferDetail")]
         public async Task<IActionResult> DeleteOfferDetails(int detailId)
@@ -46,7 +45,5 @@ namespace OffersProject.Controllers
             return Ok(vResult);
         }
         
-=======
->>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
     }
 }
