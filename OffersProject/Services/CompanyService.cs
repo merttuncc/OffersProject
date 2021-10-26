@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+=======
 ﻿using Microsoft.EntityFrameworkCore;
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 using OfferModels.Models;
 using OfferModuleProject.Context;
 using OffersProject.Common;
@@ -13,15 +18,36 @@ namespace OffersProject.Services
     public class CompanyService
     {
         Context _context;
+<<<<<<< HEAD
+        IMapper _mapper;
+        public CompanyService(Context context, IMapper mapper)
+        {
+            _context = context;
+            _mapper = mapper;
+=======
         public CompanyService(Context context)
         {
             _context = context;
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
         }
 
         public Result<List<CompanySummary>> GetSummaryList()
         {
             try
             {
+<<<<<<< HEAD
+                var vCompanyList = _context.Companies;
+                var vCompanySummaryList = _mapper.Map<List<CompanySummary>>(vCompanyList)
+                .Select(company => new CompanySummary
+                 {
+                     Id = company.Id,
+                     CompanyName = company.CompanyName,
+                     PhoneNumber = company.PhoneNumber,
+                     OfferPrefix = company.OfferPrefix,
+                     OfferNumber = company.OfferNumber
+                 })
+                .ToList();
+=======
                 var vCompanySummaryList = _context.Companies
                         .Select(company => new CompanySummary
                         {
@@ -32,6 +58,7 @@ namespace OffersProject.Services
                             OfferNumber = company.OfferNumber
                         })
                         .ToList();
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 
                 return Result<List<CompanySummary>>.PrepareSuccess(vCompanySummaryList);
             }
@@ -43,6 +70,28 @@ namespace OffersProject.Services
 
 
 
+<<<<<<< HEAD
+        public Result<CompanySummary> GetInfo(int id)
+        {
+
+
+            var vCompany = _context.Companies;
+            var vCompanyInfo = _mapper.Map<List<CompanySummary>>(vCompany)
+                .FirstOrDefault(company => company.Id == id);
+            //.Select(company => new CompanyInfo
+            //{
+            //    Id = company.Id,
+            //    CompanyName = company.CompanyName,
+            //    Address = company.Address,
+            //    PhoneNumber = company.PhoneNumber,
+            //    FaxNumber = company.FaxNumber,
+            //    OfferPrefix = company.OfferPrefix,
+            //    OfferNumber = company.OfferNumber
+            //})
+
+
+            return Result<CompanySummary>.PrepareSuccess(vCompanyInfo);
+=======
         public Result<CompanyInfo> GetInfo(int id)
         {
 
@@ -61,6 +110,7 @@ namespace OffersProject.Services
                 .FirstOrDefault(company => company.Id == id);
 
             return Result<CompanyInfo>.PrepareSuccess(vCompanyInfo);
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
         }
 
         //public Result<CompanyInfo> GetInfo(int id)
@@ -68,7 +118,11 @@ namespace OffersProject.Services
 
 
         //    var vCompanyInfo = _context.Companies
+<<<<<<< HEAD
+
+=======
                 
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 
         //    return Result<CompanyInfo>.PrepareSuccess(vCompanyInfo);
         //}
@@ -77,6 +131,11 @@ namespace OffersProject.Services
         {
             try
             {
+<<<<<<< HEAD
+                //Company company = _mapper.Map<Company>(companyInfo);
+
+=======
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                 var vCompany = new Company
                 {
                     Id = companyInfo.Id,
@@ -110,7 +169,11 @@ namespace OffersProject.Services
                 vCompany.Address = companyInfo.Address;
                 vCompany.PhoneNumber = companyInfo.PhoneNumber;
                 vCompany.FaxNumber = companyInfo.FaxNumber;
+<<<<<<< HEAD
+                vCompany.OfferPrefix = companyInfo.OfferPrefix;
+=======
                 vCompany.OfferPrefix = companyInfo.OfferPrefix;             
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 
                 await _context.SaveChangesAsync();
 
@@ -130,10 +193,17 @@ namespace OffersProject.Services
                     .FirstOrDefault(company => company.Id == id);
 
                 _context.Remove(vCompanyInfo);
+<<<<<<< HEAD
+
+                var isSuccess = await _context.SaveChangesAsync() > 0;
+                return isSuccess
+                    ? Result.PrepareSuccess()
+=======
               
                 var isSuccess = await _context.SaveChangesAsync() > 0;
                 return isSuccess 
                     ? Result.PrepareSuccess() 
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
                     : Result.PrepareFailure("Silme işlemi başarısız");
             }
             catch (Exception vEx)

@@ -20,7 +20,9 @@ namespace OffersProject
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseStartup<Startup>()
+                    .UseUrls(new[] { "https://*:5001" });
                 });
     }
 }

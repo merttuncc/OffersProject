@@ -25,6 +25,12 @@ namespace OffersProject.FluentApiConfiguration
                  .HasColumnType("nvarchar").HasMaxLength(255).IsRequired();
             modelBuilder.Property(a => a.OfferNumber)
                  .HasColumnType("int").IsRequired();
+<<<<<<< HEAD
+
+            
+            
+=======
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
             
         }
     }

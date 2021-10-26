@@ -98,5 +98,26 @@ namespace OffersProject.Services
             }
                     
         }
+<<<<<<< HEAD
+
+        
+        public async Task<Result> OfferDetailDelete(int detailId)
+        {
+            try
+            {
+                var vResult = _context.OfferDetails.FirstOrDefault(detail => detail.Id == detailId);
+                _context.OfferDetails.Remove(vResult);
+                await _context.SaveChangesAsync();
+                return Result.PrepareSuccess();
+
+            }
+            catch (Exception vEx)
+            {
+
+                return Result.PrepareFailure(vEx.Message);
+            }
+        }
+=======
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
     }
 }

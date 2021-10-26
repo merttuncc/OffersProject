@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+﻿using OfferModels.Models;
+using System;
+=======
 ﻿using System;
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +21,11 @@ namespace OffersProject.TutorialsCurrency.Models
         public string BanknoteBuying { get; set; }
         public string BanknoteSelling { get; set; }
 
+<<<<<<< HEAD
+        
+
+=======
+>>>>>>> 72024d9eb0e793f886469af9499a3bb2a5c8b90a
         public static CurrencyModel Map(Tarih_DateCurrency x)
         {
             return new CurrencyModel
