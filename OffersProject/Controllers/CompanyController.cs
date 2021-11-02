@@ -24,12 +24,21 @@ namespace OffersProject.Controllers
             _companyService = companyService;
             //_mapper = mapper;
         }
-        
+
         [HttpGet("GetCompanyList")]
         public IActionResult GetSummaryList()
         {
-            
+
             var vResult = _companyService.GetSummaryList();
+            //var Result = _mapper.Map<List<CompanySummary>>(vResult);
+            return Ok(vResult);
+        }
+
+        [HttpGet("GetCompanyList/{searchString}")]
+        public IActionResult GetSearchList(string searchString)
+        {
+            
+            var vResult = _companyService.GetSearchList(searchString);
             //var Result = _mapper.Map<List<CompanySummary>>(vResult);
             return Ok(vResult);
         }

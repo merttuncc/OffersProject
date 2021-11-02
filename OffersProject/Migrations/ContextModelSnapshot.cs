@@ -38,8 +38,8 @@ namespace OffersProject.Migrations
 
                     b.Property<string>("FaxNumber")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
 
                     b.Property<int>("OfferNumber")
                         .HasColumnType("int");
@@ -51,8 +51,8 @@ namespace OffersProject.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
 
                     b.HasKey("Id");
 
@@ -128,6 +128,9 @@ namespace OffersProject.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("Datetime");
 
+                    b.Property<string>("Definition")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("OfferNumber")
                         .HasColumnType("int");
 
@@ -141,13 +144,15 @@ namespace OffersProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ValidityDate")
                         .HasColumnType("Datetime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyContactId");
 
                     b.HasIndex("CompanyId");
 
@@ -211,28 +216,44 @@ namespace OffersProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Mail")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<byte[]>("PasswordHash")
-                        .HasColumnType("varbinary(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varbinary(255)");
 
                     b.Property<byte[]>("PasswordSalt")
-                        .HasColumnType("varbinary(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varbinary(255)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("RegistrationNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
@@ -255,6 +276,12 @@ namespace OffersProject.Migrations
 
             modelBuilder.Entity("OfferModels.Models.Offer", b =>
                 {
+                    b.HasOne("OfferModels.Models.CompanyContact", "CompanyContact")
+                        .WithMany()
+                        .HasForeignKey("CompanyContactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("OfferModels.Models.Company", "Company")
                         .WithMany("Offers")
                         .HasForeignKey("CompanyId")
@@ -263,9 +290,13 @@ namespace OffersProject.Migrations
 
                     b.HasOne("OfferModels.Models.User", "User")
                         .WithMany("Offers")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Company");
+
+                    b.Navigation("CompanyContact");
 
                     b.Navigation("User");
                 });

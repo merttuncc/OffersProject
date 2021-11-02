@@ -22,6 +22,8 @@ namespace OfferModels.Models
 
         public Roles Role { get; set; }
 
+        //Navigation Property
+
         public virtual List<Offer> Offers { get; set; } 
 
     }

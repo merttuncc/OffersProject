@@ -49,6 +49,7 @@ namespace OffersProject.Controllers
                 RegistrationNumber = userForRegister.RegistrationNumber,
                 Mail = userForRegister.Mail,
                 PhoneNumber = userForRegister.PhoneNumber,
+                Password=userForRegister.Password,
                 Role=userForRegister.Role
 
 

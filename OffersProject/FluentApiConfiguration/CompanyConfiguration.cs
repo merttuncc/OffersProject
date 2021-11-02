@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OffersProject.FluentApiConfiguration
 {
-    public class CompanyConfiguration:IEntityTypeConfiguration<Company>
+    public class CompanyConfiguration : IEntityTypeConfiguration<Company>
     {
         public void Configure(EntityTypeBuilder<Company> modelBuilder)
         {
@@ -25,10 +25,6 @@ namespace OffersProject.FluentApiConfiguration
                  .HasColumnType("nvarchar").HasMaxLength(255).IsRequired();
             modelBuilder.Property(a => a.OfferNumber)
                  .HasColumnType("int").IsRequired();
-
-            
-            
-            
         }
     }
 }

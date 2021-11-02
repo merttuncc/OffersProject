@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using OfferModels.Models;
+using OfferModels.Models.Enums;
 using OfferModuleProject.Context;
 using OffersProject.Common;
 using OffersProject.Models.OfferDetailsModel;
@@ -28,6 +29,7 @@ namespace OffersProject.Services
             {
                 var vCompanyList = _context.Offers
                     .Include(offer => offer.Company)
+                    .Include(offer=>offer.User)
                     .Include(offer => offer.CompanyContact);
                 var vCompanySummaryList = _mapper.Map<List<OfferSummary>>(vCompanyList);
                 //.Select(offer => new OfferSummary
@@ -82,6 +84,7 @@ namespace OffersProject.Services
                 {
 
                     Id = offerInfo.Id,
+                    UserId=offerInfo.UserId,
                     CompanyId = offerInfo.CompanyId,
                     CompanyContactId = offerInfo.CompanyContactId,
                     OfferNumber = offerInfo.OfferNumber,
@@ -89,8 +92,10 @@ namespace OffersProject.Services
                     CommercialConditions = offerInfo.CommercialConditions,
                     TimeInformation = offerInfo.TimeInformation,
                     ProfitRate = offerInfo.ProfitRate,
+                    Definition=offerInfo.Definition,
                     Date = offerInfo.Date,
                     ValidityDate = offerInfo.ValidityDate,
+                    Status=offerInfo.Status,
                     OfferDetail = offerDetails.ToList()
                 };
 
@@ -140,7 +145,9 @@ namespace OffersProject.Services
                 updateOffer.CommercialConditions = offerInfo.CommercialConditions;
                 updateOffer.TimeInformation = offerInfo.TimeInformation;
                 updateOffer.ProfitRate = offerInfo.ProfitRate;
+                updateOffer.Definition = offerInfo.Definition;
                 updateOffer.Date = offerInfo.Date;
+                updateOffer.Status = offerInfo.Status;
                 updateOffer.OfferDetail = offerDetails.ToList();
 
 

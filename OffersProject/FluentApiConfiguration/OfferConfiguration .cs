@@ -32,6 +32,9 @@ namespace OffersProject.FluentApiConfiguration
             modelBuilder.HasOne(a => a.Company).WithMany(a => a.Offers)
                 .HasForeignKey(a => a.CompanyId);
 
+            modelBuilder.HasOne(a => a.User).WithMany(a => a.Offers)
+                .HasForeignKey(a => a.UserId);
+
             //modelBuilder.HasOne(a => a.CompanyContact).WithMany(a => a.Offers)
             //    .HasForeignKey(a => a.Id);
 

@@ -80,7 +80,7 @@ namespace OffersProject.Services
             catch (Exception vEx)
             {
                 return Result.PrepareFailure(vEx.Message);
-                throw;
+                
             }
 
             

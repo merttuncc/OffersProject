@@ -34,6 +34,7 @@ namespace OfferModuleProject.Context
             modelBuilder.ApplyConfiguration(new CompanyContactConfiguration());
             modelBuilder.ApplyConfiguration(new OfferConfiguration());
             modelBuilder.ApplyConfiguration(new OfferDetailConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
             
             //base.OnModelCreating(modelBuilder);
 

@@ -25,10 +25,10 @@ namespace OffersProject.Controllers
         }
 
         [HttpGet("GetCompanyList/{companyId}")]
-        public Result<List<CompanyContactSummary>> GetCompanyList(int companyId)
+        public IActionResult GetCompanyList(int companyId)
         {
             var response = _companyContactService.GetCompanyContactNamesByCompanyId(companyId);
-            return response;
+            return Ok(response);
         }
         [HttpPost("AddContact")]
         public async Task<IActionResult> AddContact(CompanyContactInfo companyContactInfo)

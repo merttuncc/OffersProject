@@ -11,6 +11,5 @@ namespace OfferModels.Models.Enums
         Olumsuz = 0,
         Olumlu =1,
         Beklemede=2,
-
     }
 }

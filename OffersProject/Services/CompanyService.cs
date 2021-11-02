@@ -27,21 +27,58 @@ namespace OffersProject.Services
             {
                 var vCompanyList = _context.Companies;
                 var vCompanySummaryList = _mapper.Map<List<CompanySummary>>(vCompanyList)
-                .Select(company => new CompanySummary
-                 {
-                     Id = company.Id,
-                     CompanyName = company.CompanyName,
-                     PhoneNumber = company.PhoneNumber,
-                     OfferPrefix = company.OfferPrefix,
-                     OfferNumber = company.OfferNumber
-                 })
+                //.Select(company => new CompanySummary
+                //{
+                //    Id = company.Id,
+                //    CompanyName = company.CompanyName,
+                //    PhoneNumber = company.PhoneNumber,
+                //    OfferPrefix = company.OfferPrefix,
+                //    OfferNumber = company.OfferNumber
+                //})
                 .ToList();
-
-                return Result<List<CompanySummary>>.PrepareSuccess(vCompanySummaryList);
+                
+                
+                return Result<List<CompanySummary>>.PrepareSuccess(vCompanySummaryList); 
             }
             catch (Exception vEx)
             {
                 return Result<List<CompanySummary>>.PrepareFailure(vEx.Message);
+            }
+        }
+        
+        
+        public Result<List<CompanySearch>> GetSearchList(string searchString)
+        {
+            
+            try
+            {
+                List<CompanySearch> vCompanyList=new List<CompanySearch>();
+
+
+                if (searchString.Length>2)
+                {
+                    
+                    vCompanyList = _context.Companies
+                    .Select(company => new CompanySearch
+                    {
+
+                        CompanyName = company.CompanyName
+
+                    }).Where(s => s.CompanyName.Contains(searchString)).ToList();
+            
+                }
+
+                //if (!String.IsNullOrEmpty(searchString))
+                //{
+
+                //    vCompanyList = vCompanyList.Where(s => s.CompanyName.Contains(searchString));
+                //}
+                
+                return Result<List<CompanySearch>>.PrepareSuccess(vCompanyList);
+            }
+            catch (Exception vEx)
+            {
+                return Result<List<CompanySearch>>.PrepareFailure(vEx.Message);
             }
         }
 
